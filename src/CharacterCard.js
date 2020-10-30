@@ -1,31 +1,16 @@
 import styled from 'styled-components'
 
-export default function CharacterCard({
-  name,
-  avatarUrl = 'https://rickandmortyapi.com/api/character/avatar/404.jpeg',
-  gender,
-  species,
-  type,
-  location,
-  status,
-  hidden,
-}) {
+export default function CharacterCard({ url, name, gender, species, hidden }) {
   return (
     <CardWrapper hidden={hidden}>
-      <Avatar src={avatarUrl} />
+      <Avatar src={url} />
       <InfoCard>
-        <h2>{name}test</h2>
+        <h2>{name}</h2>
         <p>
-          Gender: <span>{gender}test</span>
+          Gender: <span>{gender}</span>
         </p>
         <p>
-          Species: <span>{species}test</span>
-        </p>
-        <p>
-          Type: <span>{type}test</span>
-        </p>
-        <p>
-          Location: <span>{location}test</span>
+          Species: <span>{species}</span>
         </p>
       </InfoCard>
     </CardWrapper>
@@ -60,7 +45,8 @@ const InfoCard = styled.div`
     color: #28302d;
     font-weight: 500;
     font-size: 34px;
-    line-height: 62px;
+    line-height: 44px;
+    margin-bottom: 10px;
   }
 
   p {

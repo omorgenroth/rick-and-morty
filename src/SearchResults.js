@@ -1,16 +1,23 @@
 import styled from 'styled-components'
+import SearchResultItem from './SearchResultItem'
 
-export default function SearchResults({
-  name,
-  avatarUrl = 'https://rickandmortyapi.com/api/character/avatar/474.jpeg',
-  hidden = false,
-}) {
+export default function SearchResults({ hidden, results, getCharacter }) {
+  function onSelect(url) {
+    getCharacter(url)
+  }
   return (
     <ResultWrapper hidden={hidden}>
       <h2>Your search results:</h2>
       <Grid>
-        <Avatar src={avatarUrl} />
-        <Name>{name}</Name>
+        {results.map(({ id, name, image, url }) => (
+          <SearchResultItem
+            onSelect={onSelect}
+            key={id}
+            name={name}
+            image={image}
+            url={url}
+          />
+        ))}
       </Grid>
       <Button>Show more...</Button>
     </ResultWrapper>
@@ -26,7 +33,6 @@ const ResultWrapper = styled.section`
     color: #28302d;
     font-weight: 500;
     font-size: 26px;
-    line-height: 54px;
   }
 `
 
@@ -34,29 +40,8 @@ const Grid = styled.div`
   padding-top: 15px;
   display: grid;
   gap: 15px;
-  grid-template-columns: 15% auto;
 `
 
-const Avatar = styled.img`
-  border-radius: 10px;
-  border: 2px solid #596f72;
-  object-fit: cover;
-  width: 100%;
-  max-height: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-`
-
-const Name = styled.p`
-  color: #596f72;
-  padding: 4px 0 0 15px;
-  border-radius: 10px;
-  border: 2px solid #596f72;
-  background-color: rgba(194, 239, 245, 0.9);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 34px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-`
 const Button = styled.button`
   display: block;
   padding: 7px 45px;
