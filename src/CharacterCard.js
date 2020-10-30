@@ -1,31 +1,25 @@
 import styled from 'styled-components'
 
 export default function CharacterCard({
+  url,
   name,
-  avatarUrl = 'https://rickandmortyapi.com/api/character/avatar/404.jpeg',
   gender,
   species,
-  type,
   location,
-  status,
-  hidden,
 }) {
   return (
-    <CardWrapper hidden={hidden}>
-      <Avatar src={avatarUrl} />
+    <CardWrapper>
+      <Avatar src={url} />
       <InfoCard>
-        <h2>{name}test</h2>
+        <h2>{name}</h2>
         <p>
-          Gender: <span>{gender}test</span>
+          Gender: <span>{gender}</span>
         </p>
         <p>
-          Species: <span>{species}test</span>
+          Species: <span>{species}</span>
         </p>
         <p>
-          Type: <span>{type}test</span>
-        </p>
-        <p>
-          Location: <span>{location}test</span>
+          Location: <span>{location}</span>
         </p>
       </InfoCard>
     </CardWrapper>

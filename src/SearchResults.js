@@ -1,13 +1,22 @@
 import styled from 'styled-components'
 import SearchResultItem from './SearchResultItem'
 
-export default function SearchResults({ hidden, results }) {
+export default function SearchResults({ hidden, results, getCharacter }) {
+  function onSelect(url) {
+    getCharacter(url)
+  }
   return (
     <ResultWrapper hidden={hidden}>
       <h2>Your search results:</h2>
       <Grid>
-        {results.map(({ id, name, image }) => (
-          <SearchResultItem key={id} name={name} image={image} />
+        {results.map(({ id, name, image, url }) => (
+          <SearchResultItem
+            onSelect={onSelect}
+            key={id}
+            name={name}
+            image={image}
+            url={url}
+          />
         ))}
       </Grid>
       <Button>Show more...</Button>
