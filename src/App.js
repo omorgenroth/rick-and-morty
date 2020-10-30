@@ -1,27 +1,24 @@
-import Header from './Header'
-import Footer from './Footer'
+import { useEffect, useState } from 'react'
+import { getDataByName } from './services/getData'
 import styled from 'styled-components'
 import CharacterCard from './CharacterCard'
+import Footer from './Footer'
+import Header from './Header'
 import SearchResults from './SearchResults'
-import { getDataByName } from './services/getData'
-import { useState } from 'react'
-
 
 function App() {
-  const [results, setResults] = useState[]
+  const [results, setResults] = useState([])
 
-
-function handleSearch () {
-  
-}
-
+  function handleSearch(input) {
+    getDataByName(input).then((data) => setResults(data.results))
+  }
 
   return (
     <AppWrapper>
       <Header />
-      <SearchResults hidden="true" />
-      <CharacterCard hidden="true" />
-      <Footer onSearchRequest={handleSearch}/>
+      <SearchResults hidden={false} results={results} />
+      <CharacterCard hidden={true} />
+      <Footer onSearchRequest={handleSearch} />
     </AppWrapper>
   )
 }
