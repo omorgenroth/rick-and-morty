@@ -8,8 +8,8 @@ function App() {
   return (
     <AppWrapper>
       <Header />
-      <SearchResults />
-      <CharacterCard hidden="false" />
+      <SearchResults hidden="true" />
+      <CharacterCard />
       <Footer />
     </AppWrapper>
   )

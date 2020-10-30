@@ -47,59 +47,13 @@ const Avatar = styled.img`
 const InfoCard = styled.div`
   border-radius: 10px;
   border: 2px solid #596f72;
-  background-color: rgba(194, 239, 245, 0.9);
   padding: 20px;
   color: #596f72;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-
-  h2 {
-    color: #28302d;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 54px;
-  }
-
-  p {
-const InfoCard = styled.div`
-  border-radius: 10px;
-  border: 2px solid #596f72;
-  padding: 20px;
-  color: #596f72;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-color: #28302d;
-font-weight: 500;
-    font-size: 26px;
-    line-height: 54px;
-  }
-
-  p {
-const InfoCard = styled.div`
-  border-radius: 10px;
-  border: 2px solid #596f72;
-  b  padding: 20px;
-  color: #596f72;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-
-     color: #28302d;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 54px;
-  }
-
-  p {
-const InfoCard = styled.div`
-  border-radius: 10px;
-  border: 2px solid #596f72;
-  b
-  padding: 20px;
-  color: #596f72;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-
-     color: #28302d;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 54px;
-  }
+  color: #28302d;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 54px;
 
   p {
     font-weight: 500;
