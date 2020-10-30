@@ -2,15 +2,16 @@ import styled from 'styled-components'
 
 export default function CharacterCard({
   name,
-  avatarUrl = 'https://rickandmortyapi.com/api/character/avatar/20.jpeg',
+  avatarUrl = 'https://rickandmortyapi.com/api/character/avatar/404.jpeg',
   gender,
   species,
   type,
   location,
   status,
+  hidden,
 }) {
   return (
-    <CardWrapper>
+    <CardWrapper hidden={hidden}>
       <Avatar src={avatarUrl} />
       <InfoCard>
         <h2>{name}</h2>
@@ -32,7 +33,7 @@ export default function CharacterCard({
 }
 
 const CardWrapper = styled.section`
-  display: grid;
+  display: ${(props) => (props.hidden ? 'none' : 'grid')};
   gap: 20px;
 `
 
@@ -53,6 +54,48 @@ const InfoCard = styled.div`
 
   h2 {
     color: #28302d;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 54px;
+  }
+
+  p {
+const InfoCard = styled.div`
+  border-radius: 10px;
+  border: 2px solid #596f72;
+  padding: 20px;
+  color: #596f72;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+color: #28302d;
+font-weight: 500;
+    font-size: 26px;
+    line-height: 54px;
+  }
+
+  p {
+const InfoCard = styled.div`
+  border-radius: 10px;
+  border: 2px solid #596f72;
+  b  padding: 20px;
+  color: #596f72;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+
+     color: #28302d;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 54px;
+  }
+
+  p {
+const InfoCard = styled.div`
+  border-radius: 10px;
+  border: 2px solid #596f72;
+  b
+  padding: 20px;
+  color: #596f72;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+
+     color: #28302d;
     font-weight: 500;
     font-size: 26px;
     line-height: 54px;

@@ -19,7 +19,7 @@ export default function Footer() {
 }
 
 const FooterStyled = styled.footer`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   padding: 20px;
