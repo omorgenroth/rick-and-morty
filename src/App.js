@@ -14,7 +14,7 @@ function App() {
 }
 
 const AppWrapper = styled.div`
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   position: relative;
   height: 100vh;
 `

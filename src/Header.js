@@ -15,5 +15,6 @@ const HeaderStyled = styled.header`
 `
 
 const LogoStyled = styled.img`
+  width: 100%;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5));
 `

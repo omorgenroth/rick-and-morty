@@ -36,7 +36,7 @@ const SearchWrapper = styled.form`
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
 
   input {
-    background: #d4ebef;
+    background-color: rgba(194, 239, 245, 0.9);
     border: none;
     width: 235px;
     height: 40px;
@@ -44,7 +44,7 @@ const SearchWrapper = styled.form`
     font-weight: 400;
     text-align: center;
     border-radius: 10px 0 0 10px;
-    color: #2a2f30;
+    color: #596f72;
     font-family: 'Oswald', sans-serif;
   }
 
