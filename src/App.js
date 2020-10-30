@@ -4,14 +4,24 @@ import styled from 'styled-components'
 import CharacterCard from './CharacterCard'
 import SearchResults from './SearchResults'
 import { getDataByName } from './services/getData'
+import { useState } from 'react'
+
 
 function App() {
+  const [results, setResults] = useState[]
+
+
+function handleSearch () {
+  
+}
+
+
   return (
     <AppWrapper>
       <Header />
       <SearchResults hidden="true" />
-      <CharacterCard />
-      <Footer onSubmit={} />
+      <CharacterCard hidden="true" />
+      <Footer onSearchRequest={handleSearch}/>
     </AppWrapper>
   )
 }
