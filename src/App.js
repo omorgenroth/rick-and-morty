@@ -1,11 +1,13 @@
 import Header from './Header'
 import Footer from './Footer'
 import styled from 'styled-components'
+import CharacterCard from './CharacterCard'
 
 function App() {
   return (
     <AppWrapper>
       <Header />
+      <CharacterCard />
       <Footer />
     </AppWrapper>
   )
