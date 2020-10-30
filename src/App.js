@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { getDataByName, getCharacter } from './services/getData'
 import styled from 'styled-components'
 import CharacterCard from './CharacterCard'
@@ -8,36 +8,38 @@ import SearchResults from './SearchResults'
 
 function App() {
   const [results, setResults] = useState([])
-
   const [character, setCharacter] = useState([])
+  const [isResultHidden, setIsResultHidden] = useState(true)
+  const [isCardHidden, setIsCardHidden] = useState(true)
 
   function handleSearch(input) {
     getDataByName(input)
       .then((data) => setResults(data.results))
       .catch((error) => console.log(error.message))
+    setIsResultHidden(false)
+    setIsCardHidden(true)
   }
 
   function handleCharacter(url) {
     getCharacter(url).then((data) => setCharacter(data))
+    setIsCardHidden(false)
+    setIsResultHidden(true)
   }
-
-  const blaBlubb = character.location
-  console.log(blaBlubb.name)
 
   return (
     <AppWrapper>
       <Header />
       <SearchResults
-        hidden={false}
         results={results}
         getCharacter={handleCharacter}
+        hidden={isResultHidden}
       />
       <CharacterCard
         name={character.name}
         gender={character.gender}
         species={character.species}
         url={character.image}
-        //location={character.name}
+        hidden={isCardHidden}
       />
       <Footer onSearchRequest={handleSearch} />
     </AppWrapper>

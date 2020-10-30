@@ -33,7 +33,7 @@ const ResultWrapper = styled.section`
     color: #28302d;
     font-weight: 500;
     font-size: 26px;
-    line-height: 54px;
+    line-height: 26px;
   }
 `
 
