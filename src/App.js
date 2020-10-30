@@ -1,11 +1,20 @@
-
+import Header from './Header'
+import Footer from './Footer'
+import styled from 'styled-components'
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
-  );
+    <AppWrapper>
+      <Header />
+      <Footer />
+    </AppWrapper>
+  )
 }
 
-export default App;
+const AppWrapper = styled.div`
+  padding: 20px;
+  position: relative;
+  height: 100vh;
+`
+
+export default App
