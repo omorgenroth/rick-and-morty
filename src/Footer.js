@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import { ReactComponent as SearchIcon } from './assets/search_icon.svg'
 import { ReactComponent as RandomIcon } from './assets/random_icon.svg'
 
-export default function Footer() {
+export default function Footer({ onSubmit }) {
   return (
     <FooterStyled>
-      <SearchWrapper>
+      <SearchWrapper onSubmit={onSubmit}>
         <input type="text" placeholder="Search for character" />
         <button>
           <SearchIcon />
