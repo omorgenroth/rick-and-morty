@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro'
 import Button from './Button'
+import AliveIcon from './assets/alive.svg'
+import DeadIcon from './assets/dead.svg'
 
 export default function CharacterCard({
   url,
@@ -13,9 +15,13 @@ export default function CharacterCard({
   loc,
   origin,
 }) {
+  console.log(status)
   return (
     <CardWrapper hidden={hidden}>
-      <Avatar src={url} />
+      <CharacterWrapper>
+        <Avatar src={url} />
+        <StatusIcon src={status === 'Dead' ? DeadIcon : AliveIcon} />
+      </CharacterWrapper>
       <InfoCard>
         <h2>{name}</h2>
         <p>
@@ -43,18 +49,30 @@ const CardWrapper = styled.section`
   padding-top: 20px;
 `
 
+const CharacterWrapper = styled.div`
+  position: relative;
+  width: 50%;
+`
+
 const Avatar = styled.img`
   border-radius: 10px;
   border: 2px solid #596f72;
-  width: 50%;
+  width: 100%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+`
+
+const StatusIcon = styled.img`
+  position: absolute;
+  bottom: -20px;
+  right: -60px;
+  width: 100px;
+  transform: rotate(20deg);
 `
 
 const InfoCard = styled.div`
   border-radius: 10px;
   border: 2px solid #596f72;
   padding: 14px 20px;
-  color: #596f72;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   color: #596f72;
   font-weight: 500;

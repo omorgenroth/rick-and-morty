@@ -16,6 +16,7 @@ export default function ErrorMessage({ hidden, onClick }) {
 }
 
 const ErrorWrapper = styled.div`
+  z-index: 50;
   display: ${(props) => (props.hidden ? 'none' : 'grid')};
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(5, 1fr);
