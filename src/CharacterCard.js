@@ -66,7 +66,7 @@ const StatusIcon = styled.img`
   bottom: -20px;
   right: -60px;
   width: 100px;
-  transform: rotate(20deg);
+  transform: rotate(-15deg);
 `
 
 const InfoCard = styled.div`
