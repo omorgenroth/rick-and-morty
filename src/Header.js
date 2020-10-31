@@ -1,10 +1,10 @@
-import styled from 'styled-components'
-import Logo from './assets/rick_and_morty_logo.png'
+import styled from 'styled-components/macro'
+import Logo from './assets/logo.png'
 
 export default function Header() {
   return (
     <HeaderStyled>
-      <LogoStyled src={Logo} alt="" />
+      <LogoStyled src={Logo} />
     </HeaderStyled>
   )
 }

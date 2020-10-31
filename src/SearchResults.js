@@ -1,24 +1,10 @@
-import styled from 'styled-components'
-import SearchResultItem from './SearchResultItem'
+import styled from 'styled-components/macro'
 
-export default function SearchResults({ hidden, results, getCharacter }) {
-  function onSelect(url) {
-    getCharacter(url)
-  }
+export default function SearchResults({ hidden, children }) {
   return (
     <ResultWrapper hidden={hidden}>
       <h2>Your search results:</h2>
-      <Grid>
-        {results.map(({ id, name, image, url }) => (
-          <SearchResultItem
-            onSelect={onSelect}
-            key={id}
-            name={name}
-            image={image}
-            url={url}
-          />
-        ))}
-      </Grid>
+      <Grid>{children}</Grid>
       <Button>Show more...</Button>
     </ResultWrapper>
   )

@@ -1,12 +1,12 @@
 import styled from 'styled-components/macro'
 
 export default function SearchResultItem({ id, image, name, url, onSelect }) {
-  function onBla(url) {
+  function onClick(url) {
     onSelect(url)
   }
 
   return (
-    <ItemWrapper onClick={() => onBla(url)} key={id}>
+    <ItemWrapper onClick={() => onClick(url)} key={id}>
       <Avatar src={image} />
       <Name>{name}</Name>
     </ItemWrapper>
