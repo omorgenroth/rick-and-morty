@@ -19,7 +19,7 @@ const ErrorWrapper = styled.div`
   z-index: 50;
   display: ${(props) => (props.hidden ? 'none' : 'grid')};
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +30,7 @@ const ErrorWrapper = styled.div`
 `
 const ErrorRickImg = styled.img`
   grid-column: 2/3;
-  grid-row: 2/6;
+  grid-row: 2/7;
   width: 100%;
   align-self: end;
 `
@@ -41,11 +41,12 @@ const Message = styled.h3`
   font-weight: 500;
   font-size: 32px;
   line-height: 1.25;
+  align-self: end;
 `
 
 const ErrorButton = styled(Button)`
   grid-column: 1/2;
   grid-row: 5/6;
   justify-self: stretch;
-  align-self: start;
+  align-self: center;
 `
