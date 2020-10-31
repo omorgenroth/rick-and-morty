@@ -9,6 +9,9 @@ export default function CharacterCard({
   hidden,
   onClick,
   btnhidden,
+  status,
+  loc,
+  origin,
 }) {
   return (
     <CardWrapper hidden={hidden}>
@@ -21,6 +24,12 @@ export default function CharacterCard({
         <p>
           Species: <span>{species}</span>
         </p>
+        <p>
+          Origin: <span>{origin && origin.name}</span>
+        </p>
+        <p>
+          Last seen: <span>{loc && loc.name}</span>
+        </p>
       </InfoCard>
       <Button hidden={btnhidden} onClick={onClick}>
         Back
@@ -28,10 +37,10 @@ export default function CharacterCard({
     </CardWrapper>
   )
 }
-
 const CardWrapper = styled.section`
   display: ${(props) => (props.hidden ? 'none' : 'grid')};
   gap: 20px;
+  padding-top: 20px;
 `
 
 const Avatar = styled.img`
@@ -44,27 +53,26 @@ const Avatar = styled.img`
 const InfoCard = styled.div`
   border-radius: 10px;
   border: 2px solid #596f72;
-  padding: 15px 0 20px 20px;
+  padding: 20px;
   color: #596f72;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   color: #596f72;
   font-weight: 500;
   font-size: 26px;
   background-color: rgba(194, 239, 245, 0.9);
-  line-height: 54px;
 
   h2 {
     color: #28302d;
     font-weight: 500;
     font-size: 34px;
-    line-height: 44px;
+    line-height: 1.25;
     margin-bottom: 10px;
   }
 
   p {
     font-weight: 500;
     font-size: 20px;
-    line-height: 32px;
+    line-height: 1.5;
   }
 
   span {
