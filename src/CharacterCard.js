@@ -8,6 +8,7 @@ export default function CharacterCard({
   species,
   hidden,
   onClick,
+  btnhidden,
 }) {
   return (
     <CardWrapper hidden={hidden}>
@@ -21,7 +22,9 @@ export default function CharacterCard({
           Species: <span>{species}</span>
         </p>
       </InfoCard>
-      <Button onClick={onClick}>Back</Button>
+      <Button hidden={btnhidden} onClick={onClick}>
+        Back
+      </Button>
     </CardWrapper>
   )
 }

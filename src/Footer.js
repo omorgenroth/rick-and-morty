@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 import { ReactComponent as SearchIcon } from './assets/search_icon.svg'
 import { ReactComponent as RandomIcon } from './assets/random_icon.svg'
 
-export default function Footer({ onSearchRequest, showErrorMessage }) {
+export default function Footer({ onSearchRequest, showErrorMessage, onClick }) {
   return (
     <FooterStyled>
       <SearchWrapper onSubmit={handleSubmit}>
@@ -16,7 +16,7 @@ export default function Footer({ onSearchRequest, showErrorMessage }) {
           <SearchIcon />
         </button>
       </SearchWrapper>
-      <RandomButton>
+      <RandomButton onClick={onClick}>
         <RandomIcon />
       </RandomButton>
     </FooterStyled>
