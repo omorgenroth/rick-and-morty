@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export default function CharacterCard({ url, name, gender, species, hidden }) {
   return (

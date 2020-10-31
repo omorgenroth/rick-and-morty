@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components/macro'
 import BackgroundImage from './assets/rick_and_morty_bg.png'
 
 export default createGlobalStyle`

@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { getDataByName, getCharacter } from './services/getData'
+import { getDataByName, getDataByUrl } from './services/getData'
 import styled from 'styled-components'
 import CharacterCard from './CharacterCard'
 import Footer from './Footer'
 import Header from './Header'
 import SearchResults from './SearchResults'
+import SearchResultItem from './SearchResultItem'
 
 function App() {
   const [results, setResults] = useState([])
@@ -12,7 +13,7 @@ function App() {
   const [isResultHidden, setIsResultHidden] = useState(true)
   const [isCardHidden, setIsCardHidden] = useState(true)
 
-  function handleSearch(input) {
+  function displayResults(input) {
     getDataByName(input)
       .then((data) => setResults(data.results))
       .catch((error) => console.log(error.message))
@@ -20,8 +21,8 @@ function App() {
     setIsCardHidden(true)
   }
 
-  function handleCharacter(url) {
-    getCharacter(url).then((data) => setCharacter(data))
+  function displayCharacterCard(url) {
+    getDataByUrl(url).then((data) => setCharacter(data))
     setIsCardHidden(false)
     setIsResultHidden(true)
   }
@@ -29,11 +30,17 @@ function App() {
   return (
     <AppWrapper>
       <Header />
-      <SearchResults
-        results={results}
-        getCharacter={handleCharacter}
-        hidden={isResultHidden}
-      />
+      <SearchResults hidden={isResultHidden}>
+        {results.map(({ id, name, image, url }) => (
+          <SearchResultItem
+            onSelect={displayCharacterCard}
+            key={id}
+            name={name}
+            image={image}
+            url={url}
+          />
+        ))}
+      </SearchResults>
       <CharacterCard
         name={character.name}
         gender={character.gender}
@@ -41,7 +48,7 @@ function App() {
         url={character.image}
         hidden={isCardHidden}
       />
-      <Footer onSearchRequest={handleSearch} />
+      <Footer onSearchRequest={displayResults} />
     </AppWrapper>
   )
 }

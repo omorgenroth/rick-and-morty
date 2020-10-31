@@ -6,7 +6,7 @@ export function getDataByName(name) {
     .catch((error) => console.log(error.message))
 }
 
-export function getCharacter(url) {
+export function getDataByUrl(url) {
   return fetch(url)
     .then((res) => res.json())
     .catch((error) => console.log(error.message))

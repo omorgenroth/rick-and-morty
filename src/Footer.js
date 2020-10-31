@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { ReactComponent as SearchIcon } from './assets/search_icon.svg'
 import { ReactComponent as RandomIcon } from './assets/random_icon.svg'
 
