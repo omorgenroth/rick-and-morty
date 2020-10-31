@@ -42,6 +42,10 @@ function App() {
     setIsResultHidden(false)
   }
 
+  function closeError() {
+    setIsError(false)
+  }
+
   function showMoreResults(url) {
     getDataByUrl(url).then((data) => {
       setResults(results.concat(data.results))
@@ -54,7 +58,7 @@ function App() {
   return (
     <AppWrapper>
       <Header />
-      <ErrorMessage hidden={!isError} />
+      <ErrorMessage hidden={!isError} onClick={closeError} />
       <SearchResults
         count={info.count}
         currentCount={results.length}

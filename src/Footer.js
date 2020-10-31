@@ -7,7 +7,8 @@ export default function Footer({ onSearchRequest }) {
     event.preventDefault()
     const formEl = event.target
     const input = formEl.searchinput
-    onSearchRequest(input.value)
+
+    //input.value === '' ?  : onSearchRequest(input.value)
     formEl.reset()
   }
 
@@ -18,6 +19,7 @@ export default function Footer({ onSearchRequest }) {
           name="searchinput"
           type="text"
           placeholder="Search for character"
+          required
         />
         <button>
           <SearchIcon />

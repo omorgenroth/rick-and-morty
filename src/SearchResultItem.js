@@ -27,6 +27,7 @@ const Avatar = styled.img`
   width: 100%;
   max-height: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 `
 
 const Name = styled.p`
@@ -39,4 +40,5 @@ const Name = styled.p`
   font-weight: 500;
   font-size: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 `
