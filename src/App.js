@@ -88,7 +88,10 @@ function App() {
         hidden={isCardHidden}
         onClick={navigateBack}
       />
-      <Footer onSearchRequest={displayResults} />
+      <Footer
+        onSearchRequest={displayResults}
+        showErrorMessage={() => setIsError(true)}
+      />
     </AppWrapper>
   )
 }
