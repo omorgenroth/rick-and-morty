@@ -25,6 +25,7 @@ function App() {
       } else {
         setResults(data.results)
         setInfo(data.info)
+        scrollUp()
         setIsResultHidden(false)
         setIsCardHidden(true)
         setIsError(false)
@@ -37,6 +38,7 @@ function App() {
     setIsCardHidden(false)
     setIsResultHidden(true)
     setIsButtonHidden(false)
+    scrollUp()
   }
 
   function navigateBack() {
@@ -48,7 +50,7 @@ function App() {
     setIsError(false)
   }
 
-  function showMoreResults(url) {
+  function addMoreResults(url) {
     getDataByUrl(url).then((data) => {
       setResults(results.concat(data.results))
       setInfo(data.info)
@@ -57,13 +59,17 @@ function App() {
     setIsCardHidden(true)
   }
 
-  function getRandomCharacter() {
+  function displayRandomCharacter() {
     const randomId = Math.round(1 + Math.random() * 671)
-    console.log(randomId)
     getDataById(randomId).then((data) => setCharacter(data))
     setIsCardHidden(false)
     setIsResultHidden(true)
     setIsButtonHidden(true)
+  }
+
+  function scrollUp() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
   }
 
   return (
@@ -85,7 +91,7 @@ function App() {
           />
         ))}
         <Button
-          onClick={() => showMoreResults(info.next)}
+          onClick={() => addMoreResults(info.next)}
           hidden={info.next ? false : true}
         >
           Show more...
@@ -96,6 +102,8 @@ function App() {
         gender={character.gender}
         species={character.species}
         url={character.image}
+        status={character.status}
+        loc={character.location}
         hidden={isCardHidden}
         onClick={navigateBack}
         btnhidden={isButtonHidden}
@@ -103,7 +111,7 @@ function App() {
       <Footer
         onSearchRequest={displayResults}
         showErrorMessage={() => setIsError(true)}
-        onClick={getRandomCharacter}
+        onClick={displayRandomCharacter}
       />
     </AppWrapper>
   )

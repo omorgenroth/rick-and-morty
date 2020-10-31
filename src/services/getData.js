@@ -18,7 +18,7 @@ export async function getDataByName(name) {
 
 export async function getDataById(id) {
   try {
-    const res = await axios.get(`${baseUrl}/ ${id}`)
+    const res = await axios.get(`${baseUrl}/${id}`)
     return res.data
   } catch {
     return 'error'

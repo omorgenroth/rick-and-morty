@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro'
 import Button from './Button'
+import AliveIcon from './assets/alive.png'
+import DeadIcon from './assets/dead.png'
 
 export default function CharacterCard({
   url,
@@ -9,10 +11,15 @@ export default function CharacterCard({
   hidden,
   onClick,
   btnhidden,
+  status,
+  loc,
 }) {
   return (
     <CardWrapper hidden={hidden}>
-      <Avatar src={url} />
+      <CharacterWrapper>
+        <Avatar src={url} />
+        <StatusIcon src={status === 'Dead' ? DeadIcon : AliveIcon} />
+      </CharacterWrapper>
       <InfoCard>
         <h2>{name}</h2>
         <p>
@@ -21,6 +28,9 @@ export default function CharacterCard({
         <p>
           Species: <span>{species}</span>
         </p>
+        <p>
+          Last seen: <span>{loc && loc.name}</span>
+        </p>
       </InfoCard>
       <Button hidden={btnhidden} onClick={onClick}>
         Back
@@ -28,43 +38,54 @@ export default function CharacterCard({
     </CardWrapper>
   )
 }
-
 const CardWrapper = styled.section`
   display: ${(props) => (props.hidden ? 'none' : 'grid')};
   gap: 20px;
+  padding-top: 20px;
+`
+
+const CharacterWrapper = styled.div`
+  position: relative;
+  width: 50%;
 `
 
 const Avatar = styled.img`
   border-radius: 10px;
   border: 2px solid #596f72;
-  width: 50%;
+  width: 100%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+`
+
+const StatusIcon = styled.img`
+  position: absolute;
+  bottom: -15px;
+  right: -55px;
+  width: 100px;
+  transform: rotate(-15deg);
 `
 
 const InfoCard = styled.div`
   border-radius: 10px;
   border: 2px solid #596f72;
-  padding: 15px 0 20px 20px;
-  color: #596f72;
+  padding: 14px 20px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   color: #596f72;
   font-weight: 500;
   font-size: 26px;
   background-color: rgba(194, 239, 245, 0.9);
-  line-height: 54px;
 
   h2 {
     color: #28302d;
     font-weight: 500;
     font-size: 34px;
-    line-height: 44px;
+    line-height: 1.25;
     margin-bottom: 10px;
   }
 
   p {
     font-weight: 500;
     font-size: 20px;
-    line-height: 32px;
+    line-height: 1.75;
   }
 
   span {
