@@ -16,14 +16,16 @@ function App() {
   const [isCardHidden, setIsCardHidden] = useState(true)
 
   function displayResults(input) {
-    getDataByName(input)
-      .then((data) => {
+    getDataByName(input).then((data) => {
+      if (data === 'Fehler') {
+        console.log('Fehler Digga')
+      } else {
         setResults(data.results)
         setInfo(data.info)
-      })
-      .catch((error) => console.log(error.message))
-    setIsResultHidden(false)
-    setIsCardHidden(true)
+        setIsResultHidden(false)
+        setIsCardHidden(true)
+      }
+    })
   }
 
   function displayCharacterCard(url) {
@@ -38,12 +40,10 @@ function App() {
   }
 
   function showMoreResults(url) {
-    getDataByUrl(url)
-      .then((data) => {
-        setResults(results.concat(data.results))
-        setInfo(data.info)
-      })
-      .catch((error) => console.log(error.message))
+    getDataByUrl(url).then((data) => {
+      setResults(results.concat(data.results))
+      setInfo(data.info)
+    })
     setIsResultHidden(false)
     setIsCardHidden(true)
   }
