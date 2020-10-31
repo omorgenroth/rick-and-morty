@@ -24,7 +24,7 @@ const ErrorWrapper = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(194, 239, 245, 0.8);
+  background-color: rgba(101, 198, 218, 0.9);
   height: 100vh;
   padding: 0 20px;
 `
