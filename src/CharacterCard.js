@@ -53,7 +53,7 @@ const Avatar = styled.img`
 const InfoCard = styled.div`
   border-radius: 10px;
   border: 2px solid #596f72;
-  padding: 20px;
+  padding: 14px 20px;
   color: #596f72;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   color: #596f72;
@@ -72,7 +72,7 @@ const InfoCard = styled.div`
   p {
     font-weight: 500;
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 1.75;
   }
 
   span {
