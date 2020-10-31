@@ -1,7 +1,14 @@
 import styled from 'styled-components/macro'
 import Button from './Button'
 
-export default function CharacterCard({ url, name, gender, species, hidden }) {
+export default function CharacterCard({
+  url,
+  name,
+  gender,
+  species,
+  hidden,
+  onClick,
+}) {
   return (
     <CardWrapper hidden={hidden}>
       <Avatar src={url} />
@@ -14,7 +21,7 @@ export default function CharacterCard({ url, name, gender, species, hidden }) {
           Species: <span>{species}</span>
         </p>
       </InfoCard>
-      <Button>Back</Button>
+      <Button onClick={onClick}>Back</Button>
     </CardWrapper>
   )
 }

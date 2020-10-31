@@ -28,6 +28,11 @@ function App() {
     setIsResultHidden(true)
   }
 
+  function navigateBack() {
+    setIsCardHidden(true)
+    setIsResultHidden(false)
+  }
+
   return (
     <AppWrapper>
       <Header />
@@ -49,6 +54,7 @@ function App() {
         species={character.species}
         url={character.image}
         hidden={isCardHidden}
+        onClick={navigateBack}
       />
       <Footer onSearchRequest={displayResults} />
     </AppWrapper>
