@@ -42,7 +42,6 @@ const FooterStyled = styled.footer`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  );
 `
 
 const SearchWrapper = styled.form`
