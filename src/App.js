@@ -25,6 +25,7 @@ function App() {
       } else {
         setResults(data.results)
         setInfo(data.info)
+        scrollUp()
         setIsResultHidden(false)
         setIsCardHidden(true)
         setIsError(false)
@@ -37,6 +38,7 @@ function App() {
     setIsCardHidden(false)
     setIsResultHidden(true)
     setIsButtonHidden(false)
+    scrollUp()
   }
 
   function navigateBack() {
@@ -63,6 +65,11 @@ function App() {
     setIsCardHidden(false)
     setIsResultHidden(true)
     setIsButtonHidden(true)
+  }
+
+  function scrollUp() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
   }
 
   return (
@@ -96,7 +103,6 @@ function App() {
         species={character.species}
         url={character.image}
         status={character.status}
-        origin={character.origin}
         loc={character.location}
         hidden={isCardHidden}
         onClick={navigateBack}

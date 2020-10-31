@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import Button from './Button'
-import AliveIcon from './assets/alive.svg'
-import DeadIcon from './assets/dead.svg'
+import AliveIcon from './assets/alive.png'
+import DeadIcon from './assets/dead.png'
 
 export default function CharacterCard({
   url,
@@ -13,9 +13,7 @@ export default function CharacterCard({
   btnhidden,
   status,
   loc,
-  origin,
 }) {
-  console.log(status)
   return (
     <CardWrapper hidden={hidden}>
       <CharacterWrapper>
@@ -29,9 +27,6 @@ export default function CharacterCard({
         </p>
         <p>
           Species: <span>{species}</span>
-        </p>
-        <p>
-          Origin: <span>{origin && origin.name}</span>
         </p>
         <p>
           Last seen: <span>{loc && loc.name}</span>
@@ -63,8 +58,8 @@ const Avatar = styled.img`
 
 const StatusIcon = styled.img`
   position: absolute;
-  bottom: -20px;
-  right: -60px;
+  bottom: -15px;
+  right: -55px;
   width: 100px;
   transform: rotate(-15deg);
 `
