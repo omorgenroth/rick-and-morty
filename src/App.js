@@ -11,12 +11,16 @@ import Button from './Button'
 function App() {
   const [results, setResults] = useState([])
   const [character, setCharacter] = useState([])
+  const [info, setInfo] = useState([])
   const [isResultHidden, setIsResultHidden] = useState(true)
   const [isCardHidden, setIsCardHidden] = useState(true)
 
   function displayResults(input) {
     getDataByName(input)
-      .then((data) => setResults(data.results))
+      .then((data) => {
+        setResults(data.results)
+        setInfo(data.info)
+      })
       .catch((error) => console.log(error.message))
     setIsResultHidden(false)
     setIsCardHidden(true)
@@ -33,10 +37,25 @@ function App() {
     setIsResultHidden(false)
   }
 
+  function showMoreResults(url) {
+    getDataByUrl(url)
+      .then((data) => {
+        setResults(results.concat(data.results))
+        setInfo(data.info)
+      })
+      .catch((error) => console.log(error.message))
+    setIsResultHidden(false)
+    setIsCardHidden(true)
+  }
+
   return (
     <AppWrapper>
       <Header />
-      <SearchResults hidden={isResultHidden}>
+      <SearchResults
+        count={info.count}
+        currentCount={results.length}
+        hidden={isResultHidden}
+      >
         {results.map(({ id, name, image, url }) => (
           <SearchResultItem
             onSelect={displayCharacterCard}
@@ -46,7 +65,7 @@ function App() {
             url={url}
           />
         ))}
-        <Button>Show more...</Button>
+        <Button onClick={() => showMoreResults(info.next)}>Show more...</Button>
       </SearchResults>
       <CharacterCard
         name={character.name}

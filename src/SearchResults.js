@@ -1,9 +1,16 @@
 import styled from 'styled-components/macro'
 
-export default function SearchResults({ hidden, children }) {
+export default function SearchResults({
+  hidden,
+  children,
+  count,
+  currentCount,
+}) {
   return (
     <ResultWrapper hidden={hidden}>
-      <h2>Your search results:</h2>
+      <h2>
+        Your search results: {currentCount}/{count}
+      </h2>
       <Grid>{children}</Grid>
     </ResultWrapper>
   )
