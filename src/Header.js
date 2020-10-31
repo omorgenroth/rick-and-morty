@@ -13,7 +13,7 @@ const HeaderStyled = styled.header`
   z-index: 100;
   background: linear-gradient(
     to top,
-    rgba(255, 255, 255, 0) 0%,
+    rgba(101, 198, 218, 0) 0%,
     rgba(101, 198, 218, 0.9) 20%,
     rgba(101, 198, 218) 70%
   );
