@@ -65,7 +65,12 @@ function App() {
             url={url}
           />
         ))}
-        <Button onClick={() => showMoreResults(info.next)}>Show more...</Button>
+        <Button
+          onClick={() => showMoreResults(info.next)}
+          hidden={info.next ? false : true}
+        >
+          Show more...
+        </Button>
       </SearchResults>
       <CharacterCard
         name={character.name}

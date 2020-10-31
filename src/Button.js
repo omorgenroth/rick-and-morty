@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro'
 
 const Button = styled.button`
-  display: block;
   padding: 7px 45px;
   font-size: 18px;
   font-weight: 400;
@@ -12,6 +11,7 @@ const Button = styled.button`
   margin: 5px auto;
   font-family: 'Oswald', sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: ${(props) => (props.hidden ? 'none' : 'block')};
 `
 
 export default Button
