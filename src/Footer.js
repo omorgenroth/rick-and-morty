@@ -2,15 +2,7 @@ import styled from 'styled-components/macro'
 import { ReactComponent as SearchIcon } from './assets/search_icon.svg'
 import { ReactComponent as RandomIcon } from './assets/random_icon.svg'
 
-export default function Footer({ onSearchRequest }) {
-  function handleSubmit(event) {
-    event.preventDefault()
-    const formEl = event.target
-    const input = formEl.searchinput
-    onSearchRequest(input.value)
-    formEl.reset()
-  }
-
+export default function Footer({ onSearchRequest, showErrorMessage }) {
   return (
     <FooterStyled>
       <SearchWrapper onSubmit={handleSubmit}>
@@ -18,6 +10,7 @@ export default function Footer({ onSearchRequest }) {
           name="searchinput"
           type="text"
           placeholder="Search for character"
+          required
         />
         <button>
           <SearchIcon />
@@ -28,6 +21,17 @@ export default function Footer({ onSearchRequest }) {
       </RandomButton>
     </FooterStyled>
   )
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const formEl = event.target
+    const input = formEl.searchinput
+
+    input.value.trim() === ''
+      ? showErrorMessage(showErrorMessage)
+      : onSearchRequest(input.value)
+    formEl.reset()
+  }
 }
 
 const FooterStyled = styled.footer`

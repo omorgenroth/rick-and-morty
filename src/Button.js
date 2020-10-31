@@ -12,6 +12,7 @@ const Button = styled.button`
   font-family: 'Oswald', sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   display: ${(props) => (props.hidden ? 'none' : 'block')};
+  cursor: pointer;
 `
 
 export default Button
