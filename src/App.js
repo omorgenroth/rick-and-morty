@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import { getDataByName, getDataByUrl } from './services/getData'
 import styled from 'styled-components'
+import Button from './Button'
 import CharacterCard from './CharacterCard'
+import ErrorMessage from './ErrorMessage'
 import Footer from './Footer'
 import Header from './Header'
-import SearchResults from './SearchResults'
 import SearchResultItem from './SearchResultItem'
-import Button from './Button'
+import SearchResults from './SearchResults'
+import { getDataByName, getDataByUrl } from './services/getData'
 
 function App() {
   const [results, setResults] = useState([])
@@ -14,16 +15,18 @@ function App() {
   const [info, setInfo] = useState([])
   const [isResultHidden, setIsResultHidden] = useState(true)
   const [isCardHidden, setIsCardHidden] = useState(true)
+  const [isError, setIsError] = useState(false)
 
   function displayResults(input) {
     getDataByName(input).then((data) => {
-      if (data === 'Fehler') {
-        console.log('Fehler Digga')
+      if (data === 'error') {
+        setIsError(true)
       } else {
         setResults(data.results)
         setInfo(data.info)
         setIsResultHidden(false)
         setIsCardHidden(true)
+        setIsError(false)
       }
     })
   }
@@ -51,6 +54,7 @@ function App() {
   return (
     <AppWrapper>
       <Header />
+      <ErrorMessage hidden={!isError} />
       <SearchResults
         count={info.count}
         currentCount={results.length}

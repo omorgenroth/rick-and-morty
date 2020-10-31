@@ -10,6 +10,8 @@ export default function Header() {
 }
 
 const HeaderStyled = styled.header`
+  z-index: 100;
+
   width: 100%;
   text-align: center;
   position: fixed;

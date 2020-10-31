@@ -15,7 +15,6 @@ export async function getDataByName(name) {
     const res = await axios.get(`${baseUrl}?name=${name}`)
     return res.data
   } catch {
-    const moin = 'Fehler'
-    return moin
+    return 'error'
   }
 }
