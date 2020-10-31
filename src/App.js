@@ -16,6 +16,7 @@ function App() {
   const [isResultHidden, setIsResultHidden] = useState(true)
   const [isCardHidden, setIsCardHidden] = useState(true)
   const [isError, setIsError] = useState(false)
+  const [isButtonHidden, setIsButtonHidden] = useState(true)
 
   function displayResults(input) {
     getDataByName(input).then((data) => {
@@ -35,6 +36,7 @@ function App() {
     getDataByUrl(url).then((data) => setCharacter(data))
     setIsCardHidden(false)
     setIsResultHidden(true)
+    setIsButtonHidden(false)
   }
 
   function navigateBack() {
@@ -61,6 +63,7 @@ function App() {
     getDataById(randomId).then((data) => setCharacter(data))
     setIsCardHidden(false)
     setIsResultHidden(true)
+    setIsButtonHidden(true)
   }
 
   return (
@@ -95,6 +98,7 @@ function App() {
         url={character.image}
         hidden={isCardHidden}
         onClick={navigateBack}
+        btnhidden={isButtonHidden}
       />
       <Footer
         onSearchRequest={displayResults}
