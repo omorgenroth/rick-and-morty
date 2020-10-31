@@ -5,7 +5,6 @@ export default function SearchResults({ hidden, children }) {
     <ResultWrapper hidden={hidden}>
       <h2>Your search results:</h2>
       <Grid>{children}</Grid>
-      <Button>Show more...</Button>
     </ResultWrapper>
   )
 }
@@ -28,7 +27,7 @@ const Grid = styled.div`
   gap: 15px;
 `
 
-const Button = styled.button`
+/* const Button = styled.button`
   display: block;
   padding: 7px 45px;
   font-size: 18px;
@@ -42,4 +41,4 @@ const Button = styled.button`
   margin-bottom: 5px;
   font-family: 'Oswald', sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-`
+` */

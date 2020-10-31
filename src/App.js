@@ -6,6 +6,7 @@ import Footer from './Footer'
 import Header from './Header'
 import SearchResults from './SearchResults'
 import SearchResultItem from './SearchResultItem'
+import Button from './Button'
 
 function App() {
   const [results, setResults] = useState([])
@@ -40,6 +41,7 @@ function App() {
             url={url}
           />
         ))}
+        <Button>Show more...</Button>
       </SearchResults>
       <CharacterCard
         name={character.name}

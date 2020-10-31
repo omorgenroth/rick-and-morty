@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import Button from './Button'
 
 export default function CharacterCard({ url, name, gender, species, hidden }) {
   return (
@@ -13,6 +14,7 @@ export default function CharacterCard({ url, name, gender, species, hidden }) {
           Species: <span>{species}</span>
         </p>
       </InfoCard>
+      <Button>Back</Button>
     </CardWrapper>
   )
 }
