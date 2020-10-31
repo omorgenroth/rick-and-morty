@@ -7,7 +7,7 @@ import Footer from './Footer'
 import Header from './Header'
 import SearchResultItem from './SearchResultItem'
 import SearchResults from './SearchResults'
-import { getDataByName, getDataByUrl } from './services/getData'
+import { getDataByName, getDataByUrl, getDataById } from './services/getData'
 
 function App() {
   const [results, setResults] = useState([])
@@ -55,6 +55,14 @@ function App() {
     setIsCardHidden(true)
   }
 
+  function getRandomCharacter() {
+    const randomId = Math.round(1 + Math.random() * 671)
+    console.log(randomId)
+    getDataById(randomId).then((data) => setCharacter(data))
+    setIsCardHidden(false)
+    setIsResultHidden(true)
+  }
+
   return (
     <AppWrapper>
       <Header />
@@ -91,6 +99,7 @@ function App() {
       <Footer
         onSearchRequest={displayResults}
         showErrorMessage={() => setIsError(true)}
+        onClick={getRandomCharacter}
       />
     </AppWrapper>
   )
