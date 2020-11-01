@@ -20,6 +20,50 @@ function App() {
   const [isIntroHidden, setIsIntroHidden] = useState(false)
   const [isError, setIsError] = useState(false)
 
+  return (
+    <AppWrapper>
+      <IntroCard hidden={isIntroHidden} />
+      <Header />
+      <ErrorMessage hidden={!isError} onClick={closeError} />
+      <SearchResults
+        count={info.count}
+        currentCount={results.length}
+        hidden={isResultHidden}
+      >
+        {results.map(({ id, name, image, url }) => (
+          <SearchResultItem
+            onSelect={displayCharacterCard}
+            key={id}
+            name={name}
+            image={image}
+            url={url}
+          />
+        ))}
+        <Button
+          onClick={() => addMoreResults(info.next)}
+          hidden={info.next ? false : true}
+        >
+          Show more...
+        </Button>
+      </SearchResults>
+      <CharacterCard
+        name={character.name}
+        gender={character.gender}
+        species={character.species}
+        url={character.image}
+        status={character.status}
+        loc={character.location}
+        hidden={isCardHidden}
+        onClick={navigateBack}
+        btnhidden={isButtonHidden}
+      />
+      <Footer
+        onSearchRequest={displayResults}
+        showErrorMessage={() => setIsError(true)}
+        onClick={displayRandomCharacter}
+      />
+    </AppWrapper>
+  )
   function displayResults(input) {
     getDataByName(input).then((data) => {
       if (data === 'error') {
@@ -75,51 +119,6 @@ function App() {
     document.body.scrollTop = 0
     document.documentElement.scrollTop = 0
   }
-
-  return (
-    <AppWrapper>
-      <IntroCard hidden={isIntroHidden} />
-      <Header />
-      <ErrorMessage hidden={!isError} onClick={closeError} />
-      <SearchResults
-        count={info.count}
-        currentCount={results.length}
-        hidden={isResultHidden}
-      >
-        {results.map(({ id, name, image, url }) => (
-          <SearchResultItem
-            onSelect={displayCharacterCard}
-            key={id}
-            name={name}
-            image={image}
-            url={url}
-          />
-        ))}
-        <Button
-          onClick={() => addMoreResults(info.next)}
-          hidden={info.next ? false : true}
-        >
-          Show more...
-        </Button>
-      </SearchResults>
-      <CharacterCard
-        name={character.name}
-        gender={character.gender}
-        species={character.species}
-        url={character.image}
-        status={character.status}
-        loc={character.location}
-        hidden={isCardHidden}
-        onClick={navigateBack}
-        btnhidden={isButtonHidden}
-      />
-      <Footer
-        onSearchRequest={displayResults}
-        showErrorMessage={() => setIsError(true)}
-        onClick={displayRandomCharacter}
-      />
-    </AppWrapper>
-  )
 }
 
 const AppWrapper = styled.div`

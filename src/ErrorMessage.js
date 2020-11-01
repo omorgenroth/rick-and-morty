@@ -16,37 +16,37 @@ export default function ErrorMessage({ hidden, onClick }) {
 }
 
 const ErrorWrapper = styled.div`
-  z-index: 50;
+  background-color: rgba(101, 198, 218, 0.9);
   display: ${(props) => (props.hidden ? 'none' : 'grid')};
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(6, 1fr);
+  height: 100vh;
+  left: 0;
+  padding: 0 20px;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background-color: rgba(101, 198, 218, 0.9);
-  height: 100vh;
-  padding: 0 20px;
+  z-index: 50;
 `
 const ErrorRickImg = styled.img`
+  align-self: end;
   grid-column: 2/3;
   grid-row: 2/7;
   width: 100%;
-  align-self: end;
 `
 const Message = styled.h3`
+  align-self: end;
+  color: rgb(204, 0, 0);
+  font-size: 32px;
+  font-weight: 500;
   grid-column: 1/3;
   grid-row: 4/5;
-  color: #cc0000;
-  font-weight: 500;
-  font-size: 32px;
   line-height: 1.25;
-  align-self: end;
 `
 
 const ErrorButton = styled(Button)`
+  align-self: center;
   grid-column: 1/2;
   grid-row: 5/6;
   justify-self: stretch;
-  align-self: center;
 `

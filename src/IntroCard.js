@@ -11,15 +11,15 @@ export default function IntroCard({ hidden }) {
 }
 
 const Card = styled.div`
-  display: ${(props) => (props.hidden ? 'none' : 'block')};
-  border-radius: 10px;
-  border: 2px solid #596f72;
-  padding: 14px 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-  color: #596f72;
-  font-weight: 500;
-  font-size: 26px;
-  text-align: center;
   background-color: rgba(194, 239, 245, 0.9);
+  border-radius: 10px;
+  border: 2px solid rgb(89, 111, 114);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  color: rgb(89, 111, 114);
+  display: ${(props) => (props.hidden ? 'none' : 'block')};
+  font-size: 26px;
+  font-weight: 500;
   margin-top: 40px;
+  padding: 14px 0;
+  text-align: center;
 `

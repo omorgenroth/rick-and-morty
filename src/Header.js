@@ -10,21 +10,21 @@ export default function Header() {
 }
 
 const HeaderStyled = styled.header`
-  z-index: 100;
   background: linear-gradient(
     to top,
     rgba(101, 198, 218, 0) 0%,
     rgba(101, 198, 218, 0.9) 20%,
     rgba(101, 198, 218) 70%
   );
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  top: 0px;
   left: 0px;
+  position: fixed;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
 `
 
 const LogoStyled = styled.img`
-  width: 95%;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5));
+  width: 95%;
 `

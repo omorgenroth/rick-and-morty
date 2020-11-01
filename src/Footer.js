@@ -35,55 +35,55 @@ export default function Footer({ onSearchRequest, showErrorMessage, onClick }) {
 }
 
 const FooterStyled = styled.footer`
-  position: fixed;
   bottom: 0;
-  left: 0;
-  padding: 0 20px 20px 20px;
   display: flex;
   justify-content: space-between;
+  left: 0;
+  padding: 0 20px 20px 20px;
+  position: fixed;
   width: 100%;
 `
 
 const SearchWrapper = styled.form`
-  height: 42px;
-  border: 1px black solid;
   border-radius: 10px;
-  display: flex;
+  border: 1px solid rgb(89, 111, 114);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  height: 42px;
 
   input {
     background-color: rgba(194, 239, 245, 0.9);
+    border-radius: 10px 0 0 10px;
     border: none;
-    width: 235px;
-    height: 40px;
+    color: rgb(89, 111, 114);
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
     font-weight: 400;
+    height: 40px;
     text-align: center;
-    border-radius: 10px 0 0 10px;
-    color: #596f72;
-    font-family: 'Oswald', sans-serif;
+    width: 235px;
   }
 
   input:focus {
-    outline: none;
-    border: #a6e255 2px solid;
     border-radius: 10px 0 0 10px;
+    border: rgb(166, 226, 85) 2px solid;
+    outline: none;
   }
 
   button {
-    border: none;
-    background: #a6e255;
-    width: 40px;
-    height: 40px;
+    background: rgb(166, 226, 85);
     border-radius: 0 10px 10px 0;
+    border: none;
+    height: 40px;
+    width: 40px;
   }
 `
 
 const RandomButton = styled.button`
-  width: 46px;
-  height: 42px;
-  background: #a6e255;
-  border: 1px solid black;
+  background: rgb(166, 226, 85);
   border-radius: 10px;
+  border: 1px solid rgb(89, 111, 114);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  height: 42px;
+  width: 46px;
 `
