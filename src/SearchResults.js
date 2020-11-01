@@ -20,7 +20,6 @@ export default function SearchResults({
 }
 
 const ResultWrapper = styled.section`
-  overflow-y: auto;
   padding-bottom: 4px;
   height: 100%;
   display: ${(props) => (props.hidden ? 'none' : 'block')};
