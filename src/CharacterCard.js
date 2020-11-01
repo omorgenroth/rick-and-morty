@@ -51,41 +51,41 @@ const CharacterWrapper = styled.div`
 
 const Avatar = styled.img`
   border-radius: 10px;
-  border: 2px solid #596f72;
-  width: 100%;
+  border: 2px solid rgb(89, 111, 114);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
 `
 
 const StatusIcon = styled.img`
-  position: absolute;
   bottom: 0;
-  right: -75px;
-  width: 110px;
-  transform: rotate(-8deg);
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+  position: absolute;
+  right: -75px;
+  transform: rotate(-8deg);
+  width: 110px;
 `
 
 const InfoCard = styled.div`
-  border-radius: 10px;
-  border: 2px solid #596f72;
-  padding: 14px 20px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-  color: #596f72;
-  font-weight: 500;
-  font-size: 26px;
   background-color: rgba(194, 239, 245, 0.9);
+  border-radius: 10px;
+  border: 2px solid rgb(89, 111, 114);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  color: rgb(89, 111, 114);
+  font-size: 26px;
+  font-weight: 500;
+  padding: 14px 20px;
 
   h2 {
-    color: #28302d;
-    font-weight: 500;
+    color: rgb(40, 48, 45);
     font-size: 34px;
+    font-weight: 500;
     line-height: 1.25;
     margin-bottom: 10px;
   }
 
   p {
-    font-weight: 500;
     font-size: 20px;
+    font-weight: 500;
     line-height: 1.75;
   }
 

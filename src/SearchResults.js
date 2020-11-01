@@ -18,34 +18,34 @@ export default function SearchResults({
 }
 
 const ResultWrapper = styled.section`
-  padding-bottom: 4px;
   display: ${(props) => (props.hidden ? 'none' : 'block')};
+  padding-bottom: 4px;
 `
 
 const ResultHeadline = styled.h2`
-  color: #28302d;
-  font-weight: 500;
+  color: rgb(40, 48, 45);
   font-size: 26px;
+  font-weight: 500;
 `
 
 const ResultCounter = styled.p`
-  position: fixed;
-  top: 125px;
-  right: 40px;
-  width: 50px;
-  padding: 4px 4px;
-  border-radius: 10px;
-  border: 2px solid #596f72;
   background-color: rgba(194, 239, 245, 0.9);
+  border-radius: 10px;
+  border: 2px solid rgb(89, 111, 114);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: rgb(40, 48, 45);
   font-size: 14px;
   font-weight: 500;
+  padding: 4px 4px;
+  position: fixed;
+  right: 40px;
   text-align: center;
-  color: #28302d;
+  top: 125px;
+  width: 50px;
 `
 
 const Grid = styled.div`
-  padding-top: 15px;
   display: grid;
   gap: 15px;
+  padding-top: 15px;
 `

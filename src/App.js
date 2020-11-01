@@ -20,62 +20,6 @@ function App() {
   const [isIntroHidden, setIsIntroHidden] = useState(false)
   const [isError, setIsError] = useState(false)
 
-  function displayResults(input) {
-    getDataByName(input).then((data) => {
-      if (data === 'error') {
-        setIsError(true)
-      } else {
-        setResults(data.results)
-        setInfo(data.info)
-        scrollUp()
-        setIsResultHidden(false)
-        setIsCardHidden(true)
-        setIsError(false)
-        setIsIntroHidden(true)
-      }
-    })
-  }
-
-  function displayCharacterCard(url) {
-    getDataByUrl(url).then((data) => setCharacter(data))
-    setIsCardHidden(false)
-    setIsResultHidden(true)
-    setIsButtonHidden(false)
-    scrollUp()
-  }
-
-  function navigateBack() {
-    setIsCardHidden(true)
-    setIsResultHidden(false)
-  }
-
-  function closeError() {
-    setIsError(false)
-  }
-
-  function addMoreResults(url) {
-    getDataByUrl(url).then((data) => {
-      setResults(results.concat(data.results))
-      setInfo(data.info)
-    })
-    setIsResultHidden(false)
-    setIsCardHidden(true)
-  }
-
-  function displayRandomCharacter() {
-    const randomId = Math.round(1 + Math.random() * 671)
-    getDataById(randomId).then((data) => setCharacter(data))
-    setIsCardHidden(false)
-    setIsResultHidden(true)
-    setIsButtonHidden(true)
-    setIsIntroHidden(true)
-  }
-
-  function scrollUp() {
-    document.body.scrollTop = 0
-    document.documentElement.scrollTop = 0
-  }
-
   return (
     <AppWrapper>
       <IntroCard hidden={isIntroHidden} />
@@ -120,6 +64,61 @@ function App() {
       />
     </AppWrapper>
   )
+  function displayResults(input) {
+    getDataByName(input).then((data) => {
+      if (data === 'error') {
+        setIsError(true)
+      } else {
+        setResults(data.results)
+        setInfo(data.info)
+        scrollUp()
+        setIsResultHidden(false)
+        setIsCardHidden(true)
+        setIsError(false)
+        setIsIntroHidden(true)
+      }
+    })
+  }
+
+  function addMoreResults(url) {
+    getDataByUrl(url).then((data) => {
+      setResults(results.concat(data.results))
+      setInfo(data.info)
+    })
+    setIsResultHidden(false)
+    setIsCardHidden(true)
+  }
+
+  function displayCharacterCard(url) {
+    getDataByUrl(url).then((data) => setCharacter(data))
+    setIsCardHidden(false)
+    setIsResultHidden(true)
+    setIsButtonHidden(false)
+    scrollUp()
+  }
+
+  function displayRandomCharacter() {
+    const randomId = Math.round(1 + Math.random() * 671)
+    getDataById(randomId).then((data) => setCharacter(data))
+    setIsCardHidden(false)
+    setIsResultHidden(true)
+    setIsButtonHidden(true)
+    setIsIntroHidden(true)
+  }
+
+  function navigateBack() {
+    setIsCardHidden(true)
+    setIsResultHidden(false)
+  }
+
+  function closeError() {
+    setIsError(false)
+  }
+
+  function scrollUp() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
 }
 
 const AppWrapper = styled.div`
