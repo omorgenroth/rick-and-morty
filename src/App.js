@@ -80,23 +80,6 @@ function App() {
     })
   }
 
-  function displayCharacterCard(url) {
-    getDataByUrl(url).then((data) => setCharacter(data))
-    setIsCardHidden(false)
-    setIsResultHidden(true)
-    setIsButtonHidden(false)
-    scrollUp()
-  }
-
-  function navigateBack() {
-    setIsCardHidden(true)
-    setIsResultHidden(false)
-  }
-
-  function closeError() {
-    setIsError(false)
-  }
-
   function addMoreResults(url) {
     getDataByUrl(url).then((data) => {
       setResults(results.concat(data.results))
@@ -106,6 +89,14 @@ function App() {
     setIsCardHidden(true)
   }
 
+  function displayCharacterCard(url) {
+    getDataByUrl(url).then((data) => setCharacter(data))
+    setIsCardHidden(false)
+    setIsResultHidden(true)
+    setIsButtonHidden(false)
+    scrollUp()
+  }
+
   function displayRandomCharacter() {
     const randomId = Math.round(1 + Math.random() * 671)
     getDataById(randomId).then((data) => setCharacter(data))
@@ -113,6 +104,15 @@ function App() {
     setIsResultHidden(true)
     setIsButtonHidden(true)
     setIsIntroHidden(true)
+  }
+
+  function navigateBack() {
+    setIsCardHidden(true)
+    setIsResultHidden(false)
+  }
+
+  function closeError() {
+    setIsError(false)
   }
 
   function scrollUp() {
