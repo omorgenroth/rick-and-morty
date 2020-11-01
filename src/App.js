@@ -5,6 +5,7 @@ import CharacterCard from './CharacterCard'
 import ErrorMessage from './ErrorMessage'
 import Footer from './Footer'
 import Header from './Header'
+import IntroCard from './IntroCard'
 import SearchResultItem from './SearchResultItem'
 import SearchResults from './SearchResults'
 import { getDataByName, getDataByUrl, getDataById } from './services/getData'
@@ -15,8 +16,9 @@ function App() {
   const [info, setInfo] = useState([])
   const [isResultHidden, setIsResultHidden] = useState(true)
   const [isCardHidden, setIsCardHidden] = useState(true)
-  const [isError, setIsError] = useState(false)
   const [isButtonHidden, setIsButtonHidden] = useState(true)
+  const [isIntroHidden, setIsIntroHidden] = useState(false)
+  const [isError, setIsError] = useState(false)
 
   function displayResults(input) {
     getDataByName(input).then((data) => {
@@ -29,6 +31,7 @@ function App() {
         setIsResultHidden(false)
         setIsCardHidden(true)
         setIsError(false)
+        setIsIntroHidden(true)
       }
     })
   }
@@ -65,6 +68,7 @@ function App() {
     setIsCardHidden(false)
     setIsResultHidden(true)
     setIsButtonHidden(true)
+    setIsIntroHidden(true)
   }
 
   function scrollUp() {
@@ -74,6 +78,7 @@ function App() {
 
   return (
     <AppWrapper>
+      <IntroCard hidden={isIntroHidden} />
       <Header />
       <ErrorMessage hidden={!isError} onClick={closeError} />
       <SearchResults
