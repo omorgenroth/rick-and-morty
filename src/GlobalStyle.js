@@ -11,7 +11,7 @@ export default createGlobalStyle`
 body {
     background-attachment: fixed;
     background-image: url(${BackgroundImage});
-    background-size: auto 100vh;
+    background-size: cover;
     font-family: 'Oswald', sans-serif;
     position: relative;
 }
