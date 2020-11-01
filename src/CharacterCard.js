@@ -58,10 +58,11 @@ const Avatar = styled.img`
 
 const StatusIcon = styled.img`
   position: absolute;
-  bottom: -15px;
-  right: -55px;
-  width: 100px;
-  transform: rotate(-15deg);
+  bottom: 0;
+  right: -75px;
+  width: 110px;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
 `
 
 const InfoCard = styled.div`
