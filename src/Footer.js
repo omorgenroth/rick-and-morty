@@ -49,7 +49,7 @@ const SearchWrapper = styled.form`
   border: 1px solid rgb(89, 111, 114);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   display: flex;
-  height: 42px;
+  width: 100%;
 
   input {
     background-color: rgba(194, 239, 245, 0.9);
@@ -61,7 +61,7 @@ const SearchWrapper = styled.form`
     font-weight: 400;
     height: 40px;
     text-align: center;
-    width: 235px;
+    width: 100%;
   }
 
   input:focus {
@@ -74,6 +74,7 @@ const SearchWrapper = styled.form`
     background: rgb(166, 226, 85);
     border-radius: 0 10px 10px 0;
     border: none;
+    flex-shrink: 0;
     height: 40px;
     width: 40px;
   }
@@ -84,6 +85,8 @@ const RandomButton = styled.button`
   border-radius: 10px;
   border: 1px solid rgb(89, 111, 114);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
   height: 42px;
-  width: 46px;
+  margin-left: 15px;
+  width: 50px;
 `
